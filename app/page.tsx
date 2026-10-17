@@ -91,7 +91,7 @@ export default function Home() {
                 อาหารเพื่อสุขภาพ · เมืองทอง
               </p>
               <h1 className="text-hero font-bold text-sky-dark">
-                มีสุข
+                ปันความสุข
               </h1>
               <p className="mt-4 text-title font-semibold text-pink-dark [font-family:var(--font-heading)]">
                 กินดี มีสุข ทุกวัน
@@ -115,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* จุดเด่น */}
-        <Section id="features" eyebrow="ทำไมต้องมีสุข" title="ใส่ใจทุกคำที่คุณทาน">
+        <Section id="features" eyebrow="ทำไมต้องปันความสุข" title="ใส่ใจทุกคำที่คุณทาน">
           <div className="grid gap-5 sm:grid-cols-3">
             {features.map((f) => (
               <div
@@ -236,10 +236,10 @@ export default function Home() {
       {/* ส่วนท้าย */}
       <footer className="bg-sky-dark px-5 pt-8 pb-28 text-center text-sm text-white/90 sm:pb-8">
         <p className="text-lg font-semibold text-white [font-family:var(--font-heading)]">
-          มีสุข
+          ปันความสุข
         </p>
         <p className="mt-1">อาหารเพื่อสุขภาพ · เมืองทอง · เปิด 08.00–18.00 น.</p>
-        <p className="mt-3 text-white/70">© 2026 มีสุข</p>
+        <p className="mt-3 text-white/70">© 2026 ปันความสุข</p>
       </footer>
 
       {/* ปุ่มไลน์ลอยด้านล่าง (มือถือ) */}

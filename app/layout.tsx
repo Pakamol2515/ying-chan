@@ -13,9 +13,9 @@ const heading = Prompt({
   weight: ["500", "600", "700"],
 });
 
-const title = "มีสุข | อาหารเพื่อสุขภาพ สด สะอาด ปลอดภัย";
+const title = "ปันความสุข | อาหารเพื่อสุขภาพ สด สะอาด ปลอดภัย";
 const description =
-  "อาหารเพื่อสุขภาพจากร้านมีสุข เมืองทอง ปลอดภัย สะอาด ครบสารอาหาร สั่งง่ายทางไลน์ เปิดทุกวัน 08.00–18.00 น.";
+  "อาหารเพื่อสุขภาพจากร้านปันความสุข เมืองทอง ปลอดภัย สะอาด ครบสารอาหาร สั่งง่ายทางไลน์ เปิดทุกวัน 08.00–18.00 น.";
 
 export const metadata: Metadata = {
   title,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    siteName: "มีสุข",
+    siteName: "ปันความสุข",
     locale: "th_TH",
     type: "website",
   },
