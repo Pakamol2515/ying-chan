@@ -84,7 +84,7 @@ export default function Home() {
             aria-hidden
             className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-sky/25 blur-3xl"
           />
-          <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-5 py-16 sm:py-24 md:flex-row md:gap-16">
+          <div className="relative mx-auto flex max-w-5xl flex-col-reverse items-center gap-6 px-5 py-12 sm:py-24 md:flex-row md:gap-16">
             <div className="flex-1 text-center md:text-left">
               <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-sm font-medium text-sky-dark shadow-sm">
                 <span className="h-2 w-2 rounded-full bg-leaf" />
@@ -326,24 +326,74 @@ function ContactCard({
 
 function HeroArt() {
   return (
-    <div aria-hidden className="relative h-64 w-64 shrink-0 sm:h-72 sm:w-72">
+    <div className="relative h-56 w-56 shrink-0 sm:h-72 sm:w-72">
       <div className="absolute inset-0 rounded-full bg-white shadow-xl shadow-sky/20" />
       <div className="absolute inset-6 rounded-full bg-gradient-to-br from-sky-soft to-pink-soft" />
-      <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full">
+      <svg
+        viewBox="0 0 200 200"
+        className="absolute inset-0 h-full w-full"
+        role="img"
+        aria-label="ภาพวาดข้าวหน้าแซลมอนกับผักสด"
+      >
+        {/* ผักสลัดด้านหลัง */}
+        <path
+          d="M38 104 c-6 -14 4 -26 16 -22 c2 -12 18 -14 22 -4 c-10 4 -24 14 -38 26z"
+          fill="var(--leaf)"
+        />
+        <path
+          d="M162 104 c6 -14 -4 -26 -16 -22 c-2 -12 -18 -14 -22 -4 c10 4 24 14 38 26z"
+          fill="var(--leaf)"
+          opacity="0.85"
+        />
+        {/* ข้าว */}
+        <path d="M44 106 c4 -24 30 -36 56 -36 s52 12 56 36z" fill="#fff" />
+        <g fill="#e8eef3">
+          <ellipse cx="62" cy="98" rx="3" ry="1.6" />
+          <ellipse cx="74" cy="90" rx="3" ry="1.6" />
+          <ellipse cx="128" cy="92" rx="3" ry="1.6" />
+          <ellipse cx="140" cy="100" rx="3" ry="1.6" />
+        </g>
+        {/* แซลมอน 3 ชิ้น */}
+        {[
+          { x: 72, r: -18 },
+          { x: 100, r: 0 },
+          { x: 128, r: 18 },
+        ].map((s) => (
+          <g key={s.x} transform={`rotate(${s.r} ${s.x} 90)`}>
+            <rect x={s.x - 13} y="72" width="26" height="34" rx="9" fill="#ff8a65" />
+            <path
+              d={`M${s.x - 9} 80 q9 4 18 0 M${s.x - 9} 89 q9 4 18 0 M${s.x - 9} 98 q9 4 18 0`}
+              stroke="#ffe0d2"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </g>
+        ))}
+        {/* ผักสด: แตงกวา มะเขือเทศ ถั่วแระ */}
+        <circle cx="54" cy="100" r="8" fill="#a5d6a7" stroke="var(--leaf)" strokeWidth="2.5" />
+        <circle cx="54" cy="100" r="3" fill="#e8f5e9" />
+        <circle cx="148" cy="99" r="8" fill="#ef5350" />
+        <circle cx="145" cy="96" r="2" fill="#fff" opacity="0.7" />
+        <ellipse cx="88" cy="104" rx="4" ry="3" fill="#7cb342" />
+        <ellipse cx="113" cy="104" rx="4" ry="3" fill="#7cb342" />
+        {/* งา */}
+        <g fill="#fff8e1">
+          <ellipse cx="86" cy="80" rx="1.4" ry="0.8" />
+          <ellipse cx="104" cy="77" rx="1.4" ry="0.8" />
+          <ellipse cx="118" cy="84" rx="1.4" ry="0.8" />
+        </g>
         {/* ชาม */}
-        <path d="M40 105 h120 a60 55 0 0 1 -120 0z" fill="var(--sky)" />
-        <path d="M40 105 h120" stroke="var(--sky-dark)" strokeWidth="4" strokeLinecap="round" />
-        {/* ผักและผลไม้ */}
-        <circle cx="75" cy="92" r="16" fill="var(--leaf)" />
-        <circle cx="100" cy="85" r="18" fill="var(--pink)" />
-        <circle cx="127" cy="93" r="15" fill="var(--leaf)" opacity="0.8" />
-        <circle cx="100" cy="85" r="7" fill="#fff" opacity="0.6" />
-        {/* ใบไม้ */}
-        <path d="M100 66 c-4 -16 8 -26 20 -26 c0 14 -10 24 -20 26z" fill="var(--leaf)" />
-        <path d="M100 66 c2 -10 8 -18 16 -22" stroke="#fff" strokeWidth="1.5" fill="none" />
+        <path d="M36 106 h128 a64 52 0 0 1 -128 0z" fill="var(--sky)" />
+        <path d="M36 106 h128" stroke="var(--sky-dark)" strokeWidth="4" strokeLinecap="round" />
+        <path d="M60 122 q40 14 80 0" stroke="#fff" strokeWidth="2.5" fill="none" opacity="0.5" strokeLinecap="round" />
+        <path d="M84 158 h32" stroke="var(--sky-dark)" strokeWidth="5" strokeLinecap="round" />
       </svg>
-      <span className="absolute top-6 right-2 rounded-full bg-white px-3 py-1 text-sm font-semibold text-pink-dark shadow">
-        สดใหม่ทุกวัน
+      <span className="absolute top-6 right-0 rounded-full bg-white px-3 py-1 text-sm font-semibold text-pink-dark shadow">
+        ข้าวหน้าแซลมอน
+      </span>
+      <span className="absolute bottom-8 left-0 rounded-full bg-white px-3 py-1 text-sm font-semibold text-sky-dark shadow">
+        ผักสด สะอาด
       </span>
     </div>
   );
